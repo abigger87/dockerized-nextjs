@@ -1,5 +1,8 @@
 FROM node:latest
 
+# Environment Variables
+ENV APP_PORT=3000
+
 # Setting working directory. All the path will be relative to WORKDIR
 WORKDIR ./
 
@@ -8,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Expose Port
-EXPOSE 3000
+EXPOSE ${APP_PORT}
 
 # Copying source files
 COPY . .
